@@ -1,8 +1,12 @@
 package com.legionmodding.energetictools;
 
+import com.legionmodding.energetictools.handler.ConfigHandler;
+import com.legionmodding.energetictools.handler.registry.ItemRegistry;
 import com.legionmodding.energetictools.util.Reference;
 
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -17,6 +21,8 @@ public class EnergeticTools
 
     public EnergeticTools()
     {
+        ItemRegistry.registerItems();
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onClientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onCommonSetup);
     }

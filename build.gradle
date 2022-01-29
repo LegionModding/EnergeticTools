@@ -9,7 +9,7 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle'
 
-version = 'forge-0.0.1'
+version = 'Forge-0.0.2'
 group = 'com.legionmodding.energetictools'
 archivesBaseName = 'EnergeticTools'
 
@@ -74,10 +74,20 @@ repositories {
     maven { // Patchouli
         url 'https://maven.blamejared.com/'
     }
+
+    repositories {
+        maven {
+            name = 'Legions Maven'
+            url = 'https://maven.legionmodding.com/repository/legion-modding'
+        }
+    }
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.23'
+
+    implementation fg.deobf("com.legionmodding.yalm:yalm-forge:0.0.3")
+
     runtimeOnly fg.deobf("com.teamcofh:cofh_core:1.16.5-1.4.2.9")
     runtimeOnly fg.deobf("com.teamcofh:thermal_foundation:1.16.5-1.4.3.10")
     runtimeOnly fg.deobf("com.teamcofh:thermal_expansion:1.16.5-1.4.2.4")

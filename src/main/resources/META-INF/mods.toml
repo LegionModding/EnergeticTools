@@ -20,3 +20,9 @@ license="All rights reserved"
     versionRange="[1.16.5,1.17)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.energetictools]]
+    modId="yalm"
+    mandatory=true
+    versionRange="[forge-0.0.3,forge-0.1.0)"
+    ordering="NONE"
+    side="BOTH"
